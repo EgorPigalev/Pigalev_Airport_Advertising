@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Pigalev_Airport_Advertising"
-        mc:Ignorable="d"
-        Title="Реклама авиакомпании" Height="600" Width="1000">
+        mc:Ignorable="d" FontFamily="Comic Sans MS"
+        Title="Реклама авиакомпании" Height="800" Width="1200" MinHeight="600" MinWidth="1000" >
     <Grid>
-        <Border Width="700" Height="300" CornerRadius="20">
+        <Border x:Name="bBanner" Width="700" Height="300" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -24,10 +24,20 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Name="tbHeader" Text="Не упустите момент!!!" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" Width="400" Grid.Row="0"/>
-                    <Button Name="btnLink" Grid.Row="1" Content="Перейти к покупке" Height="50" Width="200"/>
+                    <TextBlock Name="tbHeader" Text="Не упусти момент!!!&#13;Купи авиабилет" Foreground="Red" TextAlignment="Center" FontWeight="Bold" FontSize="24" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="10" Grid.Row="0"/>
+                    <Button Name="btnLink" Grid.Row="1" Content="Перейти к покупке" Height="50" Width="200" Template="{StaticResource ResourceKey=CTButonMainPage}" Cursor="Hand"/>
                 </Grid>
-                <Image Height="100" Width="100" Source="Resources/airport_logo.png" Grid.Column="1"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="20" HorizontalAlignment="Right">
+                        <Image Height="80" Width="80" Source="Resources\airport_logo.png"/>
+                        <TextBlock Text="АвиаРоссия" HorizontalAlignment="Center" FontSize="20" FontFamily="Normal"/>
+                    </StackPanel>
+                    <Image x:Name="imPrice" Height="150" Width="150" Source="Resources\price.png" Grid.Row="1"/>
+                </Grid>
             </Grid>
         </Border>
     </Grid>

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Pigalev_Airport_Advertising"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ControlTemplate x:Key="CTButonMainPage" TargetType="Button">
+            <Border CornerRadius="20" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}">
+                <ContentControl Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </ControlTemplate>
     </Application.Resources>
 </Application>
